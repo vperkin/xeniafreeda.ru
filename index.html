@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<head>	
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Сайт писателя Ксении Фриды. Гадание по строчкам из книги “Девушка для водолея”">
+		<meta name="keywords" content="Ксения Фрида, Ксения, Фрида, Xenia, Freeda, писатель, книга, Девушка для водолея, строки, Girl for aquarius, гадания, гадание, предсказание, книги">  
+		<title> Ксения Фрида | Xenia Freeda</title>
+		<link rel="shortcut icon" href="img/favicon.png" type="image/png">
+		<script src="js/sleep.js"></script>
+		<script src="js/divFlicker.js"></script>
+		<script src="js/findString.js"></script>
+		<script src="js/slowShow.js"></script>
+		<script src="js/slowHide.js"></script>
+		<script src="js/divCopy.js"></script>
+		<script src="js/tryAgain.js"></script>	
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		
+		<!-- Подключаем Bootstrap CSS -->
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
+	</head>
+	<body>
+		<div id="mainbtn" class="center from-top" hidden="true" onclick="findString(this);">Получить ответ</div>		
+			<div id="string" class="stringbook" hidden="true" onclick="divCopy(this);"></div>		
+			<button id="copybtn" class="btnn" hidden="true" data-clipboard-action="copy" data-clipboard-target="#string">Скопировать текст</button>
+			<button id="refreshbtn" class="btnn" hidden="true" onclick="tryAgain();">Попробовать снова</button>		
+		<script type="text/javascript">
+			let divColor = 1;
+			let divButtonInterval;
+			let divStringInterval;
+			slowShow(document.getElementById("mainbtn"), "2s");
+			divFlicker(document.getElementById("mainbtn"));
+			divButtonInterval = setInterval(() => divFlicker(document.getElementById("mainbtn")), 2000);	
+				
+        </script>   
+        <script src="clipboard/clipboard.min.js"></script> 
+        <script>			    
+			    var clipboard = new ClipboardJS('.btnn');
+
+			    clipboard.on('success', function(e) {
+			        console.log(e);
+			    });
+
+			    clipboard.on('error', function(e) {
+			        console.log(e);
+			    });   
+        </script>   	
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<!-- Подключаем Bootstrap JS -->
+		<script src="bootstrap/js/bootstrap.min.js"></script>	
+	</body> 
+</html>
